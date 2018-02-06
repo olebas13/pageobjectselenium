@@ -29,7 +29,7 @@ public class MainPage {
 
     public SignUpPage clickSignUpFormButton() {
         driver.findElement(signUpFormButton).click();
-        return new
+        return new SignUpPage(driver);
     }
 
     public MainPage typeUserName(String username) {

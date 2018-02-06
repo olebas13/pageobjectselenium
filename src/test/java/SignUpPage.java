@@ -34,4 +34,33 @@ public class SignUpPage {
         return this;
     }
 
+    public SignUpPage registerWithInvalidCreds(String username, String email, String password) {
+        this.typeUserName(username);
+        this.typeEmail(email);
+        this.typePassword(password);
+        driver.findElement(signUpButton).click();
+        return new SignUpPage(driver);
+    }
+
+    public String getHeadingText() {
+        return driver.findElement(heading).getText();
+    }
+
+    public String getMainErrorText() {
+        return driver.findElement(mainError).getText();
+    }
+
+    public String getUserNameErrorText() {
+        return driver.findElement(userNameError).getText();
+    }
+
+    public String getEmailErrorText() {
+        return driver.findElement(emailError).getText();
+    }
+
+    public String getPasswordErrorText() {
+        return driver.findElement(passwordError).getText();
+    }
+
+
 }
